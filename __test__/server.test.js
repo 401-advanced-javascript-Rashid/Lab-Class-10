@@ -1,10 +1,16 @@
 'use strict';
 
-
+// import server
 const { server } = require('../lib/server.js');
+
+// super goose module for testing
 const supergoose = require('@code-fellows/supergoose');
+
+// initiate mongoose for server
 const mockRequest = supergoose(server);
 
+
+// ready to test the routes 
 describe('Sony API', () => {
 
   /////////////////// categories ///////////////////////////////////////////////////////////////////

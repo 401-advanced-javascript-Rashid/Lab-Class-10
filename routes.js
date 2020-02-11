@@ -1,10 +1,17 @@
 'use strict';
 
+// modules 
 const Categories = require('./model/categories.js');
 const Products = require('./model/products.js');
+// express module
 const express = require('express');
 const router = express.Router();
 
+
+
+// url: https://webapplog.com/url-parameters-and-routing-in-express-js/
+
+router.param('model' , getModel);
 function getModel(req , res , next){
 
   let  model = req.params.model ;
@@ -23,7 +30,13 @@ function getModel(req , res , next){
   }
 }
 
-router.param('model' , getModel);
+//  routes
+//  string
+//  function
+//  {Response} 
+ 
+
+
 
 router.get('/api/v1/:model',getRoutes);
 function getRoutes(req , res , next){
